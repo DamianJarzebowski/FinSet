@@ -1,0 +1,50 @@
+{
+	"secret_id": "628812fe-9a99-4e50-8b8a-bbff33050bc7",
+	"secret_key": "738c1efc3993f715b2c45d84392822412434343652fc1d114cb3e0dd1505f59e2cfe7eab640489a85519e99df88e5ecdf743ddc38a447f9705b20c4fcd19c2f8"
+}
+
+{
+	"access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2MjM2MTM0LCJqdGkiOiIzOWFmYWM5ZTE0YzQ0NGU2YTA3YjUxYTE5YzA0MTc0YiIsImlkIjoyMjk2Miwic2V
+	jcmV0X2lkIjoiNjI4ODEyZmUtOWE5OS00ZTUwLThiOGEtYmJmZjMzMDUwYmM3IiwiYWxsb3dlZF9jaWRycyI6WyIwLjAuMC4wLzAiLCI6Oi8wIl19.sjNInygfdqmAezfKwbiI-r0kE6zi7sc7J0B-u7K6Ka4",
+	"access_expires": 86400,
+	"refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3ODc0MTczNCwianRpIjoiNDQ1YWJhMWJiYWI5NGQ0M2IxZmRkMWMyZmNhZDk1MGQiLCJpZCI6MjI5NjIsInN
+	lY3JldF9pZCI6IjYyODgxMmZlLTlhOTktNGU1MC04YjhhLWJiZmYzMzA1MGJjNyIsImFsbG93ZWRfY2lkcnMiOlsiMC4wLjAuMC8wIiwiOjovMCJdfQ.ElYyXrN6r-8xJUjnwv1O6Sp2Zda5F8dT2xVWlVKlSps",
+	"refresh_expires": 2592000
+}
+
+institution_id = SANDBOXFINANCE_SFIN0000
+
+{
+    "id": "d3c2873e-f149-48d4-95e6-b9d89c75c684",
+    "created": "2023-02-11T21:16:29.177583Z",
+    "redirect": "http://localhost:8080/swagger-ui.html#/",
+    "status": "CR",
+    "institution_id": "SANDBOXFINANCE_SFIN0000",
+    "agreement": "",
+    "reference": "1",
+    "accounts": [],
+    "user_language": "PL",
+    "link": "https://ob.nordigen.com/psd2/start/d3c2873e-f149-48d4-95e6-b9d89c75c684/SANDBOXFINANCE_SFIN0000",
+    "ssn": null,
+    "account_selection": false,
+    "redirect_immediate": false
+}
+
+{
+    "id": "d3c2873e-f149-48d4-95e6-b9d89c75c684",
+    "created": "2023-02-11T21:16:29.177583Z",
+    "redirect": "http://localhost:8080/swagger-ui.html#/",
+    "status": "LN",
+    "institution_id": "SANDBOXFINANCE_SFIN0000",
+    "agreement": "0354b70d-259a-441f-980d-a5561a74f3d2",
+    "reference": "1",
+    "accounts": [
+        "7e944232-bda9-40bc-b784-660c7ab5fe78",
+        "99a0bfe2-0bef-46df-bff2-e9ae0c6c5838"
+    ],
+    "user_language": "PL",
+    "link": "https://ob.nordigen.com/psd2/start/d3c2873e-f149-48d4-95e6-b9d89c75c684/SANDBOXFINANCE_SFIN0000",
+    "ssn": null,
+    "account_selection": false,
+    "redirect_immediate": false
+}
