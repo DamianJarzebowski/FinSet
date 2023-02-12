@@ -8,7 +8,7 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Account {
+public class AccountDetails {
 
     private String resourceId;
 
