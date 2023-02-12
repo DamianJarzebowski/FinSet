@@ -15,11 +15,13 @@ import java.util.Map;
 @RequestMapping("/api/accounts")
 public class Accounts {
 
+    String access = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2MjM2MTM0LCJqdGkiOiIzOWFmYWM5ZTE0YzQ0NGU2YTA3YjUxYTE5YzA0MTc0YiIsImlkIjoyMjk2Miwic2VjcmV0X2lkIjoiNjI4ODEyZmUtOWE5OS00ZTUwLThiOGEtYmJmZjMzMDUwYmM3IiwiYWxsb3dlZF9jaWRycyI6WyIwLjAuMC4wLzAiLCI6Oi8wIl19.sjNInygfdqmAezfKwbiI-r0kE6zi7sc7J0B-u7K6Ka4";
+
     @GetMapping("/transactions")
     public Object getTransactions(final RestTemplate restTemplate) {
         final HttpHeaders headers = new HttpHeaders();
         headers.set("accept", "application/json");
-        headers.set("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2MjM2MTM0LCJqdGkiOiIzOWFmYWM5ZTE0YzQ0NGU2YTA3YjUxYTE5YzA0MTc0YiIsImlkIjoyMjk2Miwic2VjcmV0X2lkIjoiNjI4ODEyZmUtOWE5OS00ZTUwLThiOGEtYmJmZjMzMDUwYmM3IiwiYWxsb3dlZF9jaWRycyI6WyIwLjAuMC4wLzAiLCI6Oi8wIl19.sjNInygfdqmAezfKwbiI-r0kE6zi7sc7J0B-u7K6Ka4");
+        headers.set("Authorization", access);
 
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
 
@@ -32,7 +34,7 @@ public class Accounts {
     public Object getDetails(final RestTemplate restTemplate) {
         final HttpHeaders headers = new HttpHeaders();
         headers.set("accept", "application/json");
-        headers.set("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2MjM2MTM0LCJqdGkiOiIzOWFmYWM5ZTE0YzQ0NGU2YTA3YjUxYTE5YzA0MTc0YiIsImlkIjoyMjk2Miwic2VjcmV0X2lkIjoiNjI4ODEyZmUtOWE5OS00ZTUwLThiOGEtYmJmZjMzMDUwYmM3IiwiYWxsb3dlZF9jaWRycyI6WyIwLjAuMC4wLzAiLCI6Oi8wIl19.sjNInygfdqmAezfKwbiI-r0kE6zi7sc7J0B-u7K6Ka4");
+        headers.set("Authorization", access);
 
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
 
@@ -45,7 +47,7 @@ public class Accounts {
     public Object getBalances(final RestTemplate restTemplate) {
         final HttpHeaders headers = new HttpHeaders();
         headers.set("accept", "application/json");
-        headers.set("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2MjM2MTM0LCJqdGkiOiIzOWFmYWM5ZTE0YzQ0NGU2YTA3YjUxYTE5YzA0MTc0YiIsImlkIjoyMjk2Miwic2VjcmV0X2lkIjoiNjI4ODEyZmUtOWE5OS00ZTUwLThiOGEtYmJmZjMzMDUwYmM3IiwiYWxsb3dlZF9jaWRycyI6WyIwLjAuMC4wLzAiLCI6Oi8wIl19.sjNInygfdqmAezfKwbiI-r0kE6zi7sc7J0B-u7K6Ka4");
+        headers.set("Authorization", access);
 
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
 
@@ -58,7 +60,7 @@ public class Accounts {
     public Object getMetadata(final RestTemplate restTemplate) {
         final HttpHeaders headers = new HttpHeaders();
         headers.set("accept", "application/json");
-        headers.set("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc2MjM2MTM0LCJqdGkiOiIzOWFmYWM5ZTE0YzQ0NGU2YTA3YjUxYTE5YzA0MTc0YiIsImlkIjoyMjk2Miwic2VjcmV0X2lkIjoiNjI4ODEyZmUtOWE5OS00ZTUwLThiOGEtYmJmZjMzMDUwYmM3IiwiYWxsb3dlZF9jaWRycyI6WyIwLjAuMC4wLzAiLCI6Oi8wIl19.sjNInygfdqmAezfKwbiI-r0kE6zi7sc7J0B-u7K6Ka4");
+        headers.set("Authorization", access);
 
         final HttpEntity<String> entity = new HttpEntity<String>(headers);
 
