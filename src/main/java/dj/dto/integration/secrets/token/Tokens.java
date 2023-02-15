@@ -1,4 +1,4 @@
-package dj.dto.integration.token;
+package dj.dto.integration.secrets.token;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;

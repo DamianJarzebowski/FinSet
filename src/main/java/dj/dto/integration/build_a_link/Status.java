@@ -1,4 +1,5 @@
-package dj.dto.integration.secrets;
+
+package dj.dto.integration.build_a_link;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,11 +9,15 @@ import lombok.experimental.Accessors;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 @Accessors(chain = true)
-public class Secrets {
+public class Status {
 
-    @JsonProperty("secret_id")
-    private String secretId;
+    @JsonProperty("short")
+    public String _short;
 
-    @JsonProperty("secret_key")
-    private String secretKey;
+    @JsonProperty("long")
+    public String _long;
+
+    @JsonProperty("description")
+    public String description;
+
 }
