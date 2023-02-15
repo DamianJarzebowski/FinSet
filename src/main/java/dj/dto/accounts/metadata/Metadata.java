@@ -1,4 +1,4 @@
-package dj.models.metadata;
+package dj.dto.accounts.metadata;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

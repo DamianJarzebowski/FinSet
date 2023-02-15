@@ -1,4 +1,4 @@
-package dj.models.transaction;
+package dj.dto.accounts.transaction;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

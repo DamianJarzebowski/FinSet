@@ -1,4 +1,4 @@
-package dj.models.balance;
+package dj.dto.accounts.transaction;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
@@ -7,10 +7,8 @@ import lombok.experimental.Accessors;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 @Accessors(chain = true)
-public class BalanceAmount {
+public class DebtorAccount {
 
-    private String amount;
-
-    private String currency;
+    private String iban;
 
 }

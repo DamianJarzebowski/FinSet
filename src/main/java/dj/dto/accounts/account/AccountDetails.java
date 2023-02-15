@@ -1,5 +1,5 @@
 
-package dj.models.account;
+package dj.dto.accounts.account;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

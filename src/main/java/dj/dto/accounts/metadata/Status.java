@@ -1,18 +1,16 @@
-package dj.models.balance;
+package dj.dto.accounts.metadata;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 @Accessors(chain = true)
-public class Balance {
+public class Status {
 
-    private BalanceAmount balanceAmount;
-
-    private String balanceType;
-
-    private String referenceDate;
+    @JsonProperty("DISCOVERED")
+    private String discovered;
 
 }
