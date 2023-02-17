@@ -11,7 +11,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Data
 @Accessors(chain = true)
-public class EndUserAgreementData {
+public class AgreementData {
 
     @JsonProperty("id")
     private String id;
