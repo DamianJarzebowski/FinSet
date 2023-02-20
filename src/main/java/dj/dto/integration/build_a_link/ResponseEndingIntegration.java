@@ -15,27 +15,42 @@ import lombok.experimental.Accessors;
 public class ResponseEndingIntegration {
 
     @JsonProperty("id")
-    public String id;
+    private String id;
+
+    @JsonProperty("created")
+    private String created;
 
     @JsonProperty("redirect")
-    public String redirect;
+    private String redirect;
 
     @JsonProperty("status")
-    public Status status;
+    private String status;
 
-    @JsonProperty("agreements")
-    public String agreements;
+    @JsonProperty("institution_id")
+    private String institutionId;
 
-    @JsonProperty("accounts")
-    public List<Object> accounts = new ArrayList<>();
+    @JsonProperty("agreement")
+    private String agreement;
 
     @JsonProperty("reference")
-    public String reference;
+    private String reference;
+
+    @JsonProperty("accounts")
+    private List<Object> accounts = new ArrayList<>();
 
     @JsonProperty("user_language")
-    public String userLanguage;
+    private String userLanguage;
 
     @JsonProperty("link")
-    public String link;
+    private String link;
+
+    @JsonProperty("ssn")
+    private String ssn;
+
+    @JsonProperty("account_selection")
+    private boolean accountSelection;
+
+    @JsonProperty("redirect_immediate")
+    private boolean redirectImmediate;
 
 }

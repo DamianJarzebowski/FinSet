@@ -25,7 +25,4 @@ public class Integration {
         return ResponseEntity.ok(integrationService.createConnection(institutionId));
     }
 
-
-
-
 }
