@@ -10,7 +10,6 @@ import dj.dto.integration.secrets.token.Tokens;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -33,42 +32,18 @@ public class IntegrationService {
     @Value("${NORDIGEN_SECRET_ID}")
     private String secretId;
 
-    private Tokens getTokens(Secrets secrets) {
+    private final IntegrationClient integrationClient;
 
-        WebClient webClient = WebClient.create("https://ob.nordigen.com");
-
-        Mono<Tokens> tokens = webClient.post()
-                .uri("/api/v2/token/new/")
-                .headers(httpHeaders -> {
-                    httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-                    httpHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-                })
-                .body(Mono.just(secrets), Secrets.class)
-                .retrieve()
-                .bodyToMono(Tokens.class);
-
-        return tokens.block();
+    private Tokens getTokens() {
+        Secrets secrets = new Secrets()
+                .setSecretKey(secretKey)
+                .setSecretId(secretId);
+        return integrationClient.createTokens(secrets);
     }
 
     public List<Bank> getListBanks(String country) {
-
-        Tokens tokens = getTokens(new Secrets()
-                .setSecretId(secretId)
-                .setSecretKey(secretKey));
-
-        WebClient webClient = WebClient.create("https://ob.nordigen.com");
-
-        Mono<List<Bank>> banks = webClient.get()
-                .uri("/api/v2/institutions/?country=" + country)
-                .headers(httpHeaders -> {
-                    httpHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
-                    httpHeaders.setBearerAuth(tokens.getAccess());
-                })
-                .retrieve()
-                .bodyToMono(new ParameterizedTypeReference<List<Bank>>() {
-                });
-
-        return banks.block();
+        Tokens tokens = getTokens();
+        return integrationClient.getBankList("Bearer " + tokens.getAccess(), country);
     }
 
     // We will not use default settings for user agreement and set our own, need only to user give us bank id which have to be connected
@@ -102,9 +77,7 @@ public class IntegrationService {
     // This method set us user agreements and transfers the customer to the bank's website in order to authorize the provision of his bank details to us
     public ResponseEntity<?> createConnection(String institutionId) {
 
-        Tokens tokens = getTokens(new Secrets()
-                .setSecretId(secretId)
-                .setSecretKey(secretKey));
+        Tokens tokens = getTokens();
 
         AgreementData agreementData = createAgreement(institutionId, tokens);
 
