@@ -14,11 +14,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @FeignClient(value = "integration", url = "https://ob.nordigen.com")
-@Headers({"accept: application/json"})
+@Headers({
+        "accept: application/json",
+        "Content-Type: application/json"})
 public interface IntegrationClient {
 
     @PostMapping(value = "/api/v2/token/new/")
-    @Headers("Content-Type: application/json")
     Tokens createTokens(@RequestBody Secrets secrets);
 
     @GetMapping(value = "/api/v2/institutions/?country={country}")
@@ -26,12 +27,10 @@ public interface IntegrationClient {
                            @PathVariable("country") String country);
 
     @PostMapping(value = "/api/v2/agreements/enduser/")
-    @Headers("Content-Type: application/json")
     AgreementData createAgreement(@RequestHeader("Authorization") String accessToken,
                                   @RequestBody IntegrationForm integrationForm);
 
     @PostMapping(value = "/api/v2/requisitions/")
-    @Headers("Content-Type: application/json")
     ResponseEndingIntegration createConnection(@RequestHeader("Authorization") String accessToken,
                                                @RequestBody DataForCreateConnection dataForCreateConnection);
 }

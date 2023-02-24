@@ -32,3 +32,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+
+### Swagger code gen ###
+/src/main/java/docs
+/src/main/java/io/swagger/client/model
