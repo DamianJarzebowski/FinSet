@@ -15,24 +15,42 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
-
 	</properties>
 
+	<dependencyManagement>
+		<dependencies>
 
+			<!--
+			Cucumber need it
+			-->
+			<dependency>
+				<groupId>io.cucumber</groupId>
+				<artifactId>cucumber-bom</artifactId>
+				<version>7.5.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!--
+			Cucumber need it
+			-->
+			<dependency>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>5.9.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
 
 	<dependencies>
-
-		<dependency>
-			<groupId>io.github.openfeign</groupId>
-			<artifactId>feign-okhttp</artifactId>
-			<version>12.1</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.github.openfeign</groupId>
-			<artifactId>feign-httpclient</artifactId>
-			<version>12.1</version>
-		</dependency>
 
 		<!--
                     OpenFeign
@@ -156,40 +174,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
-	<dependencyManagement>
-		<dependencies>
-
-			<!--
-			Cucumber need it
-			-->
-			<dependency>
-				<groupId>io.cucumber</groupId>
-				<artifactId>cucumber-bom</artifactId>
-				<version>7.5.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-			<!--
-			Cucumber need it
-			-->
-			<dependency>
-				<groupId>org.junit</groupId>
-				<artifactId>junit-bom</artifactId>
-				<version>5.9.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-core</artifactId>
-				<version>2.9.9</version>
-			</dependency>
-
-		</dependencies>
-
-	</dependencyManagement>
 
 	<build>
 		<plugins>
